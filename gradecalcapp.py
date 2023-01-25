@@ -45,6 +45,7 @@ class GradeCalculator:
             # Use get to get the string value from the StringVar class that the entries have, and then use float to convert to a double.
             letterGrade(sum)
 
+        # Lettering system
         def letterGrade(finalgrade):
             letter = ""
             if(0 <= finalgrade < 60):
