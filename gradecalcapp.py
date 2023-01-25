@@ -12,6 +12,7 @@ class GradeCalculator:
         mainframe.grid(column=0, row=0, columnspan=3, rowspan=2, sticky=(N, S, E, W))
         root.columnconfigure(0, weight=1)
         root.rowconfigure(0, weight=1)
+
         # Labels
         assignlabel = ttk.Label(content, text= "Grade Category")
         percentlabel = ttk.Label(content, text= "Grade (%)")
@@ -42,7 +43,21 @@ class GradeCalculator:
         def calc():
             sum = (float(we1.get()) * float(pe1.get()) / 100) + (float(we2.get()) * float(pe2.get()) / 100) + (float(we3.get()) * float(pe3.get()) / 100)
             # Use get to get the string value from the StringVar class that the entries have, and then use float to convert to a double.
-            gradedisplaylabel.config(text=sum)
+            letterGrade(sum)
+
+        def letterGrade(finalgrade):
+            letter = ""
+            if(0 <= finalgrade < 60):
+                letter = "F"
+            elif(60 <= finalgrade < 70):
+                letter = "D"
+            elif(70 <= finalgrade < 80):
+                letter = "C"
+            elif(80 <= finalgrade < 90):
+                letter = "B"
+            elif(90 <= finalgrade <= 100):
+                letter = "A"
+            gradedisplaylabel.config(text=str(finalgrade)+ " " + letter)
 
         # Entries, set up like this for testing. These would at least be the base entries available on launch.
         assignentry1 = ttk.Entry(content, textvariable= ae1)
