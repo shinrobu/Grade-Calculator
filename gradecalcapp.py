@@ -20,6 +20,7 @@ class GradeCalculator:
         gradelabel = ttk.Label(content, text="Final Grade:")
         gradedisplaylabel = ttk.Label(content, text="")
 
+        # Assigning widgets to a grid
         assignlabel.grid(column=0, row=0)
         percentlabel.grid(column=1, row=0)
         weightlabel.grid(column=2, row=0)
@@ -40,6 +41,7 @@ class GradeCalculator:
 
         def calc():
             sum = (float(we1.get()) * float(pe1.get()) / 100) + (float(we2.get()) * float(pe2.get()) / 100) + (float(we3.get()) * float(pe3.get()) / 100)
+            # Use get to get the string value from the StringVar class that the entries have, and then use float to convert to a double.
             gradedisplaylabel.config(text=sum)
 
         # Entries, set up like this for testing. These would at least be the base entries available on launch.
@@ -75,6 +77,9 @@ class GradeCalculator:
         content.columnconfigure(1, weight=1)
         content.columnconfigure(2, weight=1)
         content.rowconfigure(0, pad=25) # Label row space
+        content.rowconfigure(1, pad=25) # Entry row 1 space
+        content.rowconfigure(2, pad=25) # Entry row 2 space
+        content.rowconfigure(3, pad=25) # Entry row 3 space
         content.rowconfigure(6, pad=50) # Calculate button space
 
 root = Tk()
