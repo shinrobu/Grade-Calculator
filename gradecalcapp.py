@@ -77,9 +77,9 @@ class GradeCalculator:
         content.columnconfigure(1, weight=1)
         content.columnconfigure(2, weight=1)
         content.rowconfigure(0, pad=25) # Label row space
-        content.rowconfigure(1, pad=25) # Entry row 1 space
-        content.rowconfigure(2, pad=25) # Entry row 2 space
-        content.rowconfigure(3, pad=25) # Entry row 3 space
+        content.rowconfigure(1, pad=10) # Entry row 1 space
+        content.rowconfigure(2, pad=10) # Entry row 2 space
+        content.rowconfigure(3, pad=10) # Entry row 3 space
         content.rowconfigure(6, pad=50) # Calculate button space
 
 root = Tk()
